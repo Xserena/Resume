@@ -11,15 +11,8 @@
 		}
 		html,body{
 			width: 100%;
-			height: 100%;
-		}
-		#page_1{
-			width: 100%;
-			height: 100%;
-			background-color:rgba(0,0,0,0.9);
-			position: relative;
-			z-index: 1;
-		}
+			height: 900px;
+		}	
 		/*nav*/
 		nav{
 			width: 100%;
@@ -76,41 +69,21 @@
 			height: 50px;
 			margin-right: 10px;
 		}
-		/*第一页*/
-		#page_1 #tree{
-			display: inline-block;
-			position: absolute;			
-			top: 270px;
-			left: -75px;
-			width: 40%;
-			height: 45%;
-		}
-		#page_1 #apple{
-			display: inline-block;
-			position: absolute;			
-			top: 200px;
-			left: -200px;
-			width: 55%;
-			height: 55%;
-			filter: alpha(opacity:100);
-			opacity: 1;
-			animation: run 1.5s infinite;
-			-webkit-animation:run 1.5s infinite; 
-		}
-		@keyframes run{
-			0% {opacity:1;filter: alpha(opacity:100);}
-			50%{opacity:0;filter: alpha(opacity:0);}
-			100%{opacity:1;filter: alpha(opacity:100);}
+			#page_1{
+			width: 100%;
+			height: 1000px;
+			background-color:rgba(0,0,0,0.9);
+			position: relative;
+			z-index: 1;
 		}
 		#page_1 #left{
-			width: 360px;
+			width: 500px;
 			height: 300px;
-			position: absolute;
-			top:180px;
-			left: 320px;
+			margin: 0 auto;
+			padding-top: 100px;
 		}
 		#page_1 #left ul{
-			width: 360px;
+			width: 500px;
 			height: 400px;
 			opacity: 0;
 			filter: alpha(opacity:0)
@@ -118,12 +91,12 @@
 		#page_1 #left ul img{
 			width: 100px;
 			height: 40px;
-			margin-left: 150px;
+			margin-left: 200px;
 			margin-bottom: -20px;
 			margin-top: 20px;
 		}		
 		#page_1 #left ul li{
-			width: 360px;
+			width: 500px;
 			height: 60px;
 			margin-top: 35px;
 			background-color: rgba(38,38,38,0.4);
@@ -144,14 +117,13 @@
 			background-color: rgba(52,152,219,0.8);
 		}
 		#page_1 #right{
-			width: 420px;
+			width: 500px;
 			height: 400px;
-			position: absolute;
-			top:180px;
-			left: 810px;			
+			margin: 0 auto;
+			padding-top: 100px;		
 		}
 		#page_1 #right ul{
-			width: 420px;
+			width: 500px;
 			height: 270px;
 			margin-top: 10px;
 			opacity: 0;
@@ -196,7 +168,6 @@
 		#page_1 #right ul li #showcase:hover{
 			background-color: rgba(128,0,128,0.4);
 		}
-		/*第二页*/
 		#page_2{
 			position: relative;
 			z-index: 1;
@@ -208,9 +179,10 @@
 		#page_2 .myshow{
 			width: 600px;
 			height: 430px;
-			margin: auto;  
+			margin: 0 auto;  
 			padding-top: 130px;
 			overflow: hidden;
+			position: relative;
 		}
 		#page_2 .myshow ul{
 			width: 2400px;
@@ -243,7 +215,7 @@
 		}
 		#page_2 .myshow #myshow_right{
 			position: absolute;
-			right: 374px;
+			right: 0;
 			top: 130px;
 		}
 		#page_2 .myshow ul li a{
@@ -319,125 +291,38 @@
 		}
 
 		/*响应式*/
-		@media only screen and (max-width: 1240px) {
-			#page_1 #right{
-				left: 550px;
+		@media only screen and (max-width: 1250px) {
+			#page_1 #right ul img{
+				margin-left: 200px;
 			}
-			nav .contact{
-				left: 600px;
-			}
-			#page_1 #apple{
-				display: none;
-			}
-			#page_1 #tree{
-				display: none;
-			}
-			#page_1 #right ul li{
-
-			}
-			#page_1 #left{
-				left:60px;
-			}
-			#page_2 .myshow #myshow_right{
-				right:210px;
-			}
-			#page_2 .qiqiu{
-				right:50px;
-				transform: scale(0.8);
-			}
-			
-		}
-		@media only screen and (max-width: 960px) {
-
-			nav .contact{
-				left: 450px;
-				transform: scale(0.8);
-				font-size: 18px;
-			}
-			nav .profile{
-				transform: scale(0.8);
-			}
-			#page_1 #left{
-				left:50px;
-				transform: scale(0.9);
-			}
-			#page_1 #right{
-				left:450px;
-
-			}
-			#page_1 #right ul{
-				transform: scale(0.9);
-			}
-			#page_1 #apple{
-				display: none;
-			}
-			#page_1 #tree{
-				display: none;
-			}
-			#page_2 .myshow #myshow_right{
-				right:180px;
-			}
-			#page_2 .qiqiu{
-				right:0px;
-				transform: scale(0.6);
-			}
-			#page_2 .myshow{
-				padding-top:30px;
-			}
-			#page_2 .myshow #myshow_right{
-				top:30px;
-			}
-		}
-		@media only screen and (max-width: 850px) {
-			nav .profile{
-				left: 200px;
-			}
-			nav .name{
-				left: 120px;
-				transform: scale(0.8);
-			}
-			nav .contact{
-				left: 350px;
-				font-size: 18px;
-			}
-			#page_2 .myshow{
-				transform: scale(0.8);
-			}
-			#page_2 .myshow #myshow_right{
-				right: 0;
-			}
-			#page_2 .qiqiu{
-				right:-20px;
-				transform: scale(0.4);
-			}
-			#page_1 #left{
-				transform: scale(0.8);
-				left: 10px;
-			}
-			#page_1 #right{
-				transform: scale(0.8);
-				left:350px;
-			}
-			#page_1 #right ul{
-				transform: scale(0.8);
-			}
-		}
-		@media only screen and (max-width: 720px) {
-			#page_1 #left{
-				transform:scale(0.85);
-				top: 80px;
-				top:100px
-			}
-			#page_1 #right{
-				transform:scale(0.85);
-				left: -10px;
-				top: 350px;
-			}
-			#page_2 .myshow{
-				transform:scale(0.6);
+			nav	.contact{
+				width: 700px;
 				position: absolute;
-				top: 50px;
-				left: -111px;
+				top: 30px;
+				left:600px;
+				font-size: 14px;
+			}			
+		}
+		@media only screen and (max-width: 970px) 
+			nav	.contact{
+				transform: scale(0.8);
+				font-size: 16px;
+				width: 700px;
+				position: absolute;
+				top: 30px;
+				left:400px;
+			}
+		}
+		@media only screen and (max-width: 800px) {
+			#page_1 #left{
+				transform:scale(0.8);
+			}
+			#page_1 #right{
+				transform:scale(0.85);
+			}
+			#page_2 .myshow{
+				transform:scale(0.85);
+				margin:0 20px;
 			}
 			nav .profile{
 				top: 0;
@@ -454,8 +339,71 @@
 				width:20px;
 				height: 20px;
 			}
-			#page_2 .qiqiu{
-				display: none;
+		}
+		@media only screen and (max-width: 600px) {		
+			#page_1 #left{
+				transform:scale(0.6);
+				margin-left: -30px;
+			}
+			#page_1 #right{
+				transform:scale(0.6);
+				margin-left: -30px;
+			}
+			#page_2 .myshow{
+				transform:scale(0.6);
+				margin-left: -70px;
+			}
+			nav .photo{
+				left: 20px;
+			}
+			nav .name{
+				left:100px;
+			}
+
+			nav .profile{
+				left:210px;
+			}
+			nav .contact span{
+				margin-left: 0;
+			}
+			#page_1 #right{
+				padding-top: 10px;		
+			}
+			#page_1{
+				height: 800px;
+			}
+		}
+		@media only screen and (max-width: 400px) {
+			nav .name{
+				top: 30px;
+			}
+			nav .profile{
+				font-size: 12px;
+				left:180px;
+				left:200px;
+				top:25px;
+			}
+			nav .profile img{
+				width: 15px;
+				height: 15px;				
+			}
+			#page_1 #left{
+				transform:scale(0.5);
+				margin-left: -70px;
+			}
+			#page_1 #right{
+				transform:scale(0.5);
+				margin-left: -70px;
+			}
+			#page_2 .myshow{
+				transform:scale(0.5);
+				margin-left: -120px;
+			}
+			#page_1 #right{
+				padding-top: 10px;		
+			}
+			#page_1{
+				height: 800px;
 			}
 		}
 	</style>
@@ -536,8 +484,8 @@
 		</div>
 	</nav>
 	<div id="page_1">	
-		<img src="img/apple.png" id="apple">
-		<img src="img/tree.png" id="tree">
+		<!-- <img src="img/apple.png" id="apple"> -->
+		<!-- <img src="img/<tree class="pn"></tree>g" id="tree"> -->
 		<div id="left">
 			<ul id="left_ul">
 				<h3><img src="img/job.png"></h3>
@@ -612,9 +560,9 @@
 			</ul>
 			<span id="myshow_right"><img src="img/right.png"></span>
 		</div>
-		<div>
+		<!-- <div>
 			<img src="img/qiqiu.png" class="qiqiu">
-		</div>
+		</div> -->
 	</div>	
 </body>
 </html>
