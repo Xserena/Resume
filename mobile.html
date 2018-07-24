@@ -4,565 +4,387 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,shrink-to-fit=no">
 	<title></title>
-	<style type="text/css">
-		*{
-			margin: 0;
-			padding: 0;
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding:0;
+	}
+	html,body{
+		width: 100%;
+		background-color:rgba(0,0,0,0.7);
+	}
+	#nav .row{
+		width: 100%;
+		height: 100px;
+		background-color:rgba(0,0,0,0.7);
+		position: fixed;
+		z-index: 2;
+		color: rgb(192,192,192);
+		font-family: 'YouYuan';
+	}
+	#nav .row .photo{
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		top: 20px;
+		left: 50px;
+		background-image: url('img/photo.png');
+		background-size:cover; 
+		border-radius: 10%;
+	}
+	#nav .row .name{
+		position: absolute;
+		top: 30px;
+		left: 130px;
+		font-size: 30px;
+	}
+	#nav .row .profile{
+		width: 300px;
+		height: 80px;
+		position: absolute;
+		top: 20px;
+		left: 270px;
+	}		
+	#nav .row .profile li{
+		list-style: none;
+	}
+	#nav .row .profile img{
+		width: 30px;
+		height: 30px;
+		margin-right: 10px;
+	}
+	#nav .row .contact{
+		position: absolute;
+		top: 30px;
+		font-size: 14px;
+	}
+	#nav .row .contact span{			
+	}
+	#nav .row .contact span img{
+		width: 50px;
+		height: 50px;
+		margin-left: 20px;
+	}
+	h1{
+		width: 100px;
+		height: 60px;
+		margin: 0 auto;
+		padding-top: 130px;
+	}
+	h1 img{
+		width: 100px;
+		height: 40px;
+	}
+	#left_ul{
+		margin-top: 50px;
+	}
+	#left_ul li{
+		margin-top: 10px;
+		background-color: rgba(38,38,38,0.4);
+		list-style: none;
+		font-size: 14px;
+		font-weight: bolder;
+		padding: 10px 5px;
+		border-radius: 8px;
+		text-align: left;
+		color:rgba(192,192,192,0.8);
+	}
+
+	#right_ul li{
+		margin-top: 10px;
+		background-color: rgba(38,38,38,0.4);
+		list-style: none;
+		font-size: 14px;
+		font-weight: bolder;
+		padding: 10px 5px;
+		border-radius: 8px;
+		text-align: left;
+		color:rgba(192,192,192,0.8);
+	}
+	#right_ul #showcase{
+		width: 60px;
+		display: inline-block;
+		background-color: rgba(128,0,128,0.5);
+		padding:3px;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 12px;
+	}
+	#right_ul #showcase a{
+		text-decoration: none;
+		color:rgba(192,192,192,0.8);
+	}
+	#myshow #play li{
+		list-style: none;
+		margin-top: 20px;
+		padding-bottom: 10px;
+		border-bottom:2px dotted rgba(192,192,192,0.8);
+	}
+
+	#myshow #play li a{
+		display:block;
+		height: 200px;
+		position: relative;
+		background-color:rgba(0,0,0,0.7);
+	}
+	#myshow #play li a .lang{
+		position: absolute;
+		top: 0;
+		right: 70px;
+		display: block;
+		width: 60px;
+		height: 22px;
+		margin-top: 20px;
+	}
+	#myshow #play li a .lang em{
+		display:block;
+		width: 60px;
+		height: 22px;			
+		font-style: normal;
+		text-align: center;
+		margin-top: 10px;
+		margin-left: 60px;
+		font-size: 12px;
+		line-height: 22px;
+		border-radius: 10px;
+	}
+	#myshow #play li p{
+		background-color:rgba(0,0,0,0.5);
+		padding-bottom:20px;
+		text-align: center;
+	}
+	#myshow #play li p em{
+		display: inline-block;
+		height: 22px;			
+		font-style: normal;
+		text-align: left;
+		margin-top: 8px;
+		font-size: 12px;
+		line-height: 22px;
+		border-radius: 10px;
+		color:rgba(192,192,192,0.8);
+	}
+	#myshow #play li p .title{
+		width: 100%;
+		margin: 0 auto;
+		font-weight: bolder;
+		color: white;
+		display: inline-block;
+		height: 22px;			
+		font-style: normal;
+		text-align: center;
+		margin-top: 8px;
+		font-size: 12px;
+		line-height: 22px;
+		border-radius: 10px;
+	}
+
+	@media only screen and (max-width: 1200px) {
+		#nav .row .contact{
+			left:-115px;
 		}
-		html,body{
-			width: 100%;
-			height: 900px;
-		}	
-		/*nav*/
-		nav{
-			width: 100%;
-			height: 100px;
-			background-color:rgba(0,0,0,0.7);
-			position: fixed;
-			z-index: 2;
-			color: rgb(192,192,192);
-			font-family: 'YouYuan';
-		}
-		nav .photo{
-			width: 60px;
+	}
+	@media only screen and (max-width: 960px) {
+		#nav .row .profile{
+			width:200px;
 			height: 60px;
-			position: absolute;
-			top: 20px;
-			left: 50px;
-			background-image: url('img/photo.png');
-			background-size:cover; 
-			border-radius: 10%;
+			top: 5px;
+			left: 240px;
 		}
-		nav .name{
-			position: absolute;
-			top: 30px;
-			left: 130px;
-			font-size: 30px;
+		#nav .row .name{
+			top:20px;
+			font-size: 20px;
+			width: 90px;
 		}
-		nav .profile{
-			width: 300px;
-			height: 80px;
-			position: absolute;
-			top: 10px;
-			left: 270px;
-		}		
-		nav .profile li{
-			list-style: none;
-		}
-		nav .profile img{
-			width: 30px;
-			height: 30px;
-			margin-right: 10px;
-		}
-		nav	.contact{
+		#nav .row .contact{
+			transform: scale(0.8);
+			font-size: 16px;
 			width: 700px;
 			position: absolute;
-			top: 30px;
-			left:880px;
-			font-size: 14px;
+			top: 65px;
+			left:-270px;
 		}
-		nav	.contact span{			
-			margin-left: 20px;
+		#nav .row .contact span img{
+			width: 30px;
+			height: 30px;
+			top: 65px;;
 		}
-		nav	.contact span img{
-			width: 50px;
-			height: 50px;
-			margin-right: 10px;
+	}	
+	@media only screen and (max-width: 460px) {
+		#nav .row .contact{
+
+			left:-230px;
 		}
-			#page_1{
-			width: 100%;
-			height: 1000px;
-			background-color:rgba(0,0,0,0.9);
-			position: relative;
-			z-index: 1;
+	}
+	@media only screen and (max-width: 400px) {
+		#nav .row .contact{
+			transform: scale(0.7);
+			left:-230px;
 		}
-		#page_1 #left{
-			width: 500px;
-			height: 300px;
-			margin: 0 auto;
-			padding-top: 100px;
+		#nav .row .name{
+			top:20px;
+			font-size: 20px;
+			width: 90px;
 		}
-		#page_1 #left ul{
-			width: 500px;
-			height: 400px;
-			opacity: 0;
-			filter: alpha(opacity:0)
-		}
-		#page_1 #left ul img{
-			width: 100px;
-			height: 40px;
-			margin-left: 200px;
-			margin-bottom: -20px;
-			margin-top: 20px;
-		}		
-		#page_1 #left ul li{
-			width: 500px;
-			height: 60px;
-			margin-top: 35px;
-			background-color: rgba(38,38,38,0.4);
-			line-height: 60px;
-			list-style: none;
-			font-size: 15px;
-			font-weight: bolder;
-			padding: 0 14px;
-			border-radius: 8px;
-			text-align: center;
-			color:rgba(192,192,192,0.8);
-		}
-		#page_1 #left ul .mark{
-			line-height: 24px;
-			text-align: left;
-		}
-		#page_1 #left ul li:hover{
-			background-color: rgba(52,152,219,0.8);
-		}
-		#page_1 #right{
-			width: 500px;
-			height: 400px;
-			margin: 0 auto;
-			padding-top: 100px;		
-		}
-		#page_1 #right ul{
-			width: 500px;
-			height: 270px;
-			margin-top: 10px;
-			opacity: 0;
-			filter: alpha(opacity:0)
-		}
-		#page_1 #right ul li{
-			height: 45px;
-			margin-top: 10px;
-			line-height: 45px;
-			background-color: rgba(38,38,38,0.4);
-			list-style: none;
-			font-size: 15px;
-			font-weight: bolder;
-			padding: 0 14px;
-			border-radius: 8px;
-			text-align: center;
-			color:rgba(192,192,192,0.8);
-		}
-		#page_1 #right ul img{
-			width: 130px;
-			height: 60px;
-			margin-left: 150px;
-			margin-bottom: -25px;
-		}		
-		#page_1 #right ul li:hover{
-			background-color: rgba(52,152,219,0.4);
-		}
-		#page_1 #right ul li #showcase{
-			width: 80px;
-			height: 40px;
-			display: inline-block;
-			background-color: rgba(128,0,128,0.5);
-			margin-top: 3px;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 13px;
-		}
-		#page_1 #right ul li #showcase a{
-			text-decoration: none;
-			color:rgba(192,192,192,0.8);
-		}
-		#page_1 #right ul li #showcase:hover{
-			background-color: rgba(128,0,128,0.4);
-		}
-		#page_2{
-			position: relative;
-			z-index: 1;
-			width: 100%;
-			height: 100%;
-			transform: scale(1);
-			background-color:rgba(0,0,0,0.9);			
-		}
-		#page_2 .myshow{
-			width: 600px;
-			height: 430px;
-			margin: 0 auto;  
-			padding-top: 130px;
-			overflow: hidden;
-			position: relative;
-		}
-		#page_2 .myshow ul{
-			width: 2400px;
-			height: 430px;
-			background-color:rgba(1,1,1,0.1);
-			position: relative;
-		}
-		#page_2 .myshow ul li{
-			width: 600px;
-			height: 430px;
-			float: left;
-		}
-		#page_2 .myshow span{
-			display: inline-block;
-			width: 100px;
-			height: 430px;
-			text-align: center;
-			line-height: 520px;
-			cursor: pointer;
-			position: absolute;
-			z-index: 2;
-		}
-		#page_2 .myshow span:hover{
-			background-color: rgba(128,128,128,0.1);
-		}
-		#page_2 .myshow span img{
-			width: 100px;
-			height: 100px;
-			z-index: 2;
-		}
-		#page_2 .myshow #myshow_right{
-			position: absolute;
-			right: 0;
-			top: 130px;
-		}
-		#page_2 .myshow ul li a{
-			display:inline-block;
-			width: 600px;
-			height: 280px;
-		}
-		#page_2 .myshow ul li p{
-			width: 500px;
-			height: 150px;
-		}
-		#page_2 .myshow ul li p em{
-			display: inline-block;
-			width: 60px;
-			height: 26px;			
-			font-style: normal;
-			text-align: center;
-			margin-top: 10px;
-			margin-left: 60px;
+
+		#nav .row .profile{
+			left: 200px;
 			font-size: 12px;
-			line-height: 26px;
-			border-radius: 10px;
+			top:25px;
 		}
-		#page_2 .myshow ul li p .em1{
-			margin-top: 20px;
-			width: 500px;
-			height: 40px;
-			text-align: center;
-			font-size: 15px;
-			color: #DDDDDD;
+		#nav .row .profile img{
+			width: 15px;
+			height: 15px;				
 		}
-		#page_2 .myshow ul li {
-			position: relative;
-			list-style: none;
-		}
-		#page_2 .myshow ul li .mark{
-			display: inline-block;
-			position: absolute;
-			top: 10px;
-			left: 420px;
-		}
-		#page_2 .myshow ul li .mark em{
-			display: block;
-			margin-top: 15px;
-			color: #C0C0C0;
-			font-size: 15px;
-			width: 80px;
-		}
-		#page_2 .myshow ul li .mark .mark_em{
-			display: block;
-			margin-top: 0px;
-			width: 400px;
-			height: 200px;
-			position: absolute;
-			top: 280px;
-			right: 450px;
-			text-align: left;
-			font-size: 12px;
-		}
-		#page_2 .qiqiu{
-			padding-top: 60px;
-			position: absolute;
-			right: 100px;
-			opacity: 0.6;
-			filter: alpha(opacity:60)
-			animation: float 1.5s infinite;
-			-webkit-animation:float 1.5s infinite;
-		}
-		@keyframes float{
-			0%{top:60px;}
-			50%{top:68px;}
-			100%{top: 60px;}
-		}
+	}
 
-		/*响应式*/
-		@media only screen and (max-width: 1250px) {
-			#page_1 #right ul img{
-				margin-left: 200px;
-			}
-			nav	.contact{
-				width: 700px;
-				position: absolute;
-				top: 30px;
-				left:600px;
-				font-size: 14px;
-			}			
-		}
-		@media only screen and (max-width: 970px) 
-			nav	.contact{
-				transform: scale(0.8);
-				font-size: 16px;
-				width: 700px;
-				position: absolute;
-				top: 30px;
-				left:400px;
-			}
-		}
-		@media only screen and (max-width: 800px) {
-			#page_1 #left{
-				transform:scale(0.8);
-			}
-			#page_1 #right{
-				transform:scale(0.85);
-			}
-			#page_2 .myshow{
-				transform:scale(0.85);
-				margin:0 20px;
-			}
-			nav .profile{
-				top: 0;
-			}
-			nav .name{
-				top:13px;
-			}
-			nav .contact{
-				left:30px;
-				top: 70px;
-				font-size: 16px;
-			}
-			nav .contact span img{
-				width:20px;
-				height: 20px;
-			}
-		}
-		@media only screen and (max-width: 600px) {		
-			#page_1 #left{
-				transform:scale(0.6);
-				margin-left: -30px;
-			}
-			#page_1 #right{
-				transform:scale(0.6);
-				margin-left: -30px;
-			}
-			#page_2 .myshow{
-				transform:scale(0.6);
-				margin-left: -70px;
-			}
-			nav .photo{
-				left: 20px;
-			}
-			nav .name{
-				left:100px;
-			}
-
-			nav .profile{
-				left:210px;
-			}
-			nav .contact span{
-				margin-left: 0;
-			}
-			#page_1 #right{
-				padding-top: 10px;		
-			}
-			#page_1{
-				height: 800px;
-			}
-		}
-		@media only screen and (max-width: 400px) {
-			nav .name{
-				top: 30px;
-			}
-			nav .profile{
-				font-size: 12px;
-				left:180px;
-				left:200px;
-				top:25px;
-			}
-			nav .profile img{
-				width: 15px;
-				height: 15px;				
-			}
-			#page_1 #left{
-				transform:scale(0.5);
-				margin-left: -70px;
-			}
-			#page_1 #right{
-				transform:scale(0.5);
-				margin-left: -70px;
-			}
-			#page_2 .myshow{
-				transform:scale(0.5);
-				margin-left: -120px;
-			}
-			#page_1 #right{
-				padding-top: 10px;		
-			}
-			#page_1{
-				height: 800px;
-			}
-		}
-	</style>
-	<script src="run.js"></script>
-	<script type="text/javascript">
-		window.onload=function () {
-			//判断IE是否小于10
-			function IEVersion() {
-	            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
-	            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<10浏览器  
-	            if(isIE) {
-	                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
-	                reIE.test(userAgent);
-	                var fIEVersion = parseFloat(RegExp["$1"]);
-	                if(fIEVersion <10) {
-	                    document.write('您的浏览器版本过低，请升级吧^-^');
-	                }
-	            } 
-	            else{
-	            	var left_ul=document.getElementById("left_ul");				
-					run(left_ul,'opacity','100');
-					var right_ul=document.getElementById("right_ul");				
-					run(right_ul,'opacity','100');
-					var page_1=document.getElementById("page_1");
-					var page_2=document.getElementById("page_2");
-					var myshow_left=document.getElementById("myshow_left");
-					var myshow_right=document.getElementById("myshow_right");
-					// 设置幻灯片轮播
-					var play=document.getElementById("play");
-					var ul_width=play.offsetWidth;
-					var ul_left=play.offsetLeft;
-					var num=0;
-					myshow_right.onclick=function(){
-						num+=1;
-						if (num==4) {
-							run(play,'left',0);
-							num=0;
-						}else{
-							run(play,'left',(-ul_width/4)*num);
-						}
-					}
-					myshow_left.onclick=function(){
-						num-=1;
-						if (num<=-1) {
-							play.style.left=0;
-							num=0;
-						}else{
-							run(play,'left',(-ul_width/4)*num);
-						}
-					}
-
-	            }
-	        }
-		    IEVersion();			
-		}
-	</script>
-</head>
+</style>
 <body ondragstart="return false">
-	<nav>
-		<div class="photo">			
+	<div class="container-fluid" id="nav">
+		<div class="row">
+		  	<div class="col-md-4 col-sm-4 col-xs-4">
+		  		<div class="photo">			
+				</div>
+				<span class="name">
+						谢卓玲
+				</span>
+				<ul class="profile">
+					<li>
+						<img src="img/xsm.png">
+						西南大学&nbsp;&nbsp;&nbsp;本科
+					</li>
+					<li>
+						<img src="img/bir.png">
+						1991.7.11
+					</li>
+				</ul>	
+					
+		  	</div>
+		  	<div class="col-md-4 col-sm-4 col-xs-4">
+		  	</div>	
+		  	<div class="col-md-4 col-sm-4 col-xs-4">
+		  		<div class="contact">
+					<span><img src="img/phone.png">18780162375</span>
+					<span><img src="img/email.png">2286465251@qq.com</span>						
+				</div>
+		  	</div>	
 		</div>
-		<span class="name">
-				谢卓玲
-		</span>
-		<ul class="profile">
-			<li>
-				<img src="img/xsm.png">
-				西南大学&nbsp;&nbsp;&nbsp;本科
-			</li>
-			<li>
-				<img src="img/bir.png">
-				1991.7.11
-			</li>
-		</ul>	
-		<div class="contact">
-			<span><img src="img/phone.png" >18780162375</span>
-			<span><img src="img/email.png">2286465251@qq.com</span>						
+	</div>
+	<h1>
+		<img src="img/job.png">
+	</h1>
+	<div class="container-fluid">		
+		<div class="row">
+			<div class="col-md-1 col-sm-1 col-xs-1">
+			</div>
+			<div class="col-md-10 col-sm-10 col-xs-10">
+				<ul id="left_ul">
+					<li>2015.2--2017.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;埃森哲</li>
+					<li>2017.7--2018.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;普华永道</li>
+					<li class="mark">以上工作的主要内容围绕财务展开，如果兴趣不大，请详见前端自学经历板块</li>
+				</ul>
+			</div>
+			<div class="col-md-1 col-sm-1 col-xs-1">
+			</div>
 		</div>
-	</nav>
-	<div id="page_1">	
-		<!-- <img src="img/apple.png" id="apple"> -->
-		<!-- <img src="img/<tree class="pn"></tree>g" id="tree"> -->
-		<div id="left">
-			<ul id="left_ul">
-				<h3><img src="img/job.png"></h3>
-				<li>2015.2--2017.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;埃森哲</li>
-				<li>2017.7--2018.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;普华永道</li>
-				<li class="mark">以上工作的主要内容围绕财务展开，如果兴趣不大，请详见前端自学经历板块</li>
-			</ul>
-		</div>
-		<div id="right">
-			<ul id="right_ul">
-				<h3><img src="img/study.png"></h3>
+	</div>
+	<h1 style="padding-top: 30px;">
+		<img src="img/study.png">
+	</h1>
+	<div class="container-fluid">		
+		<div class="row">
+			<div class="col-md-1 col-sm-1 col-xs-1">
+			</div>
+			<div class="col-md-10 col-sm-10 col-xs-10">
+				<ul id="right_ul">
 				<li>2018.3--至今</li>
 				<li>HTML</li>
 				<li>CSS</li>
 				<li>JavaScript</li>
-				<li>以上为自学的主要内容，不敢夸大其词，也不愿妄自菲薄。</li>
+				<li>以上为自学的主要内容，不敢夸大其词，也不愿妄自菲薄</li>
 				<li>
 					欢迎各位点击查看我的小小作品-->
 					<span id="showcase"><a href="https://xserena.github.io/HomePage/HomePage.html" target='_blank'>小小作品</a></span>
 				</li>
 			</ul>
+			</div>
+			<div class="col-md-1 col-sm-1 col-xs-1">
+			</div>
 		</div>
 	</div>
-	<div id="page_2">
-		<div class="myshow">
-			<span id="myshow_left"><img src="img/left.png"></span>			
-			<ul id="play">
+
+
+	<div class="container-fluid" id="myshow">		
+		<div class="row">
+			<div class="col-md-1 col-sm-1 col-xs-1">
+			</div>
+			<div class="col-md-10 col-sm-10 col-xs-10">
+				<ul id="play">
 				<li>
 					<a href="https://xserena.github.io/HomePage/HomePage.html" target='_blank' style="background-image: url(img/homepage.png);background-repeat: no-repeat;background-size: 100% 100%"></a>
 					<p>
-						<em class="em1">我的主页</em> <br>
-						<em style="background-color: green">HTML</em>
-						<em style="background-color:#8B008B">Bootstrap</em>
-						<em style="background-color:#DC143C">CSS</em>
-						<em style="background-color:#FFFF00">JS</em><br>
+						<em class="title">我的主页</em> <br>
+						<em style="background-color: green;width: 60px; text-align: center;">HTML</em>
+						<em style="background-color:#8B008B;width: 60px; text-align: center;">Bootstrap</em>
+						<em style="background-color:#DC143C;width: 60px; text-align: center;">CSS</em>
+						<em style="background-color:#FFFF00;width: 60px; text-align: center;">JS</em><br>
 					</p>
 				</li>
 				<li>
-					<a href="https://xserena.github.io/HomePage/msg.html" target='_blank' style="background-image: url(img/msg.png);background-repeat: no-repeat;background-size: 70% 100%"></a>
+					<a href="https://xserena.github.io/HomePage/msg.html" target='_blank' style="background-image: url(img/msg.png);background-repeat: no-repeat;background-size: 70% 100%">
+						<div class="lang">
+							<em style="background-color: green">HTML</em>
+							<em style="background-color:#8B008B">Bootstrap</em>
+							<em style="background-color:#DC143C">CSS</em>
+							<em style="background-color:#FFFF00">JS</em><br>
+						</div>
+						
+					</a>
 					<p class="mark">
-						<em>写点什么</em> <br>
-						<em style="background-color: green">HTML</em>
-						<em style="background-color:#8B008B">Bootstrap</em>
-						<em style="background-color:#DC143C">CSS</em>
-						<em style="background-color:#FFFF00">JS</em><br>
-						<em class="mark_em" style="top: 280px;right: 450px;">功能：发表文章，留言，点赞,听音乐-->采用的是sessionStorage储存数据，模拟PHP+MySQL联系前后端的模式</em>
-						<em class="mark_em" style="top: 330px;right: 450px;">备注：有一些小bug，只有采用刷新页面的模式保存数据。另外，之前是用PHP+MySQL写的，但是能力有限，写到留言部分发现需要重新改结构才能继续。所以采用了sessionStorage模拟流程</em>
+						<em class="title">写点什么</em> <br>
+						
+						<em>功能：发表文章，留言，点赞,听音乐-->采用的是sessionStorage储存数据，模拟PHP+MySQL联系前后端的模式。</em>
+						<em>备注：有一些小bug，只有采用刷新页面的模式保存数据。另外，之前是用PHP+MySQL写的，但是能力有限，写到留言部分发现需要重新改结构才能继续。所以采用了sessionStorage模拟流程。</em>
 					</p>
 				</li>
 				<li>
-					<a href="https://xserena.github.io/HomePage/output.html" target='_blank' style="background-image: url(img/python.png);background-repeat: no-repeat;background-size: 70% 100%"></a>
+					<a href="https://xserena.github.io/HomePage/output.html" target='_blank' style="background-image: url(img/python.png);background-repeat: no-repeat;background-size: 70% 100%">
+						<div class="lang">
+							<em style="background-color: green">Python</em>
+							<em style="background-color:#8B008B">HTML</em>
+							<em style="background-color:#DC143C">CSS</em>
+							<em style="background-color:#FFFF00">JS</em><br>
+						</div>
+					</a>
 					<p class="mark">
-						<em>小小蜘蛛网</em> <br>
-						<em style="background-color: green">Python</em>
-						<em style="background-color:#8B008B">HTML</em>
-						<em style="background-color:#DC143C">CSS</em>
-						<em style="background-color:#FFFF00">JS</em><br>
-						<em class="mark_em" style="font-size: 15px;margin-top: 30px;">功能：爬虫，听了一点点Python爬虫的课，尝试着爬了一点新闻内容，也算是和前端有一丢丢联系吧。</em>
+						<em class="title">小小蜘蛛网</em> <br>
+						
+						<em style="font-size: 15px;">功能：爬虫，听了一点点Python爬虫的课，尝试着爬了一点新闻内容，也算是和前端有一丢丢联系吧。</em>
 					</p>
 				</li>
 				<li>
-					<a href="https://xserena.github.io/HomePage/graffiti.html" target='_blank' style="background-image: url(img/huaban.png);background-repeat: no-repeat;background-size: 70% 100%"></a>
+					<a href="https://xserena.github.io/HomePage/graffiti.html" target='_blank' style="background-image: url(img/huaban.png);background-repeat: no-repeat;background-size: 70% 100%">
+						<div class="lang">
+							<em style="background-color: green">HTML</em>
+							<em style="background-color:#8B008B">Bootstrap</em>
+							<em style="background-color:#DC143C">CSS</em>
+							<em style="background-color:#FFFF00">JS</em><br>
+						</div>
+					</a>
 					<p class="mark">
-						<em>旋转的涂鸦</em> <br>
-						<em style="background-color: green">HTML</em>
-						<em style="background-color:#8B008B">Bootstrap</em>
-						<em style="background-color:#DC143C">CSS</em>
-						<em style="background-color:#FFFF00">JS</em><br>
+						<em class="title">旋转的涂鸦</em> <br>
+						
 						<em class="mark_em">备注：此页面只针对PC端哦。<br>功能：画板，将作品设置旋转效果，Canvas的功能太炫，不过按个人能力做了一个简单的，旋转效果是一个想法，就是希望想想和网上作品不一样的...，简历中的画看起来很别扭吧，不过都是个人用这个画板画的，不用PS切图就能获取透明背景图画，而且还可以原创^-^</em>
 					</p>
 				</li>
 			</ul>
-			<span id="myshow_right"><img src="img/right.png"></span>
+
+			</div>
+			<div class="col-md-1 col-sm-1 col-xs-1">
+			</div>
 		</div>
-		<!-- <div>
-			<img src="img/qiqiu.png" class="qiqiu">
-		</div> -->
-	</div>	
+	</div>
 </body>
 </html>
