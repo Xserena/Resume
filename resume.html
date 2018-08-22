@@ -248,7 +248,7 @@
 			position: relative;
 		}
 		#page_2 .myshow ul{
-			width: 2400px;
+			width: 3000px;
 			height: 430px;
 			background-color:rgba(1,1,1,0.1);
 			position: relative;
@@ -527,11 +527,11 @@
 					var num=0;
 					myshow_right.onclick=function(){
 						num+=1;
-						if (num==4) {
+						if (num==5) {
 							run(play,'left',0);
 							num=0;
 						}else{
-							run(play,'left',(-ul_width/4)*num);
+							run(play,'left',(-ul_width/5)*num);
 						}
 					}
 					myshow_left.onclick=function(){
@@ -540,7 +540,7 @@
 							play.style.left=0;
 							num=0;
 						}else{
-							run(play,'left',(-ul_width/4)*num);
+							run(play,'left',(-ul_width/5)*num);
 						}
 					}
 					// 鼠标滚动事件
@@ -690,6 +690,19 @@
 						<em class="mark_em">备注：此页面只针对PC端哦。<br>功能：画板，将作品设置旋转效果，Canvas的功能太炫，不过按个人能力做了一个简单的，旋转效果是一个想法，就是希望想想和网上作品不一样的...，简历中的画看起来很别扭吧，不过都是个人用这个画板画的，不用PS切图就能获取透明背景图画，而且还可以原创^-^</em>
 					</p>
 				</li>
+
+				<li>
+					<a href="https://xserena.github.io/goShop/page.html" target='_blank' style="background-image: url(img/goshop.png);background-repeat: no-repeat;background-size: 70% 100%"></a>
+					<p class="mark">
+						<em style="width: 100px">购物车单页面</em> <br>
+						<em style="background-color: green">Vue.js</em>
+						<em style="background-color:#8B008B">HTML</em>
+						<em style="background-color:#DC143C">CSS</em>
+						<em style="background-color:#FFFF00">JS</em><br>
+						<em class="mark_em" style="top: 310px;">备注：此页面只针对手机端哦。<br>功能：选择/删除商品，自动计算总价，合计</em>
+					</p>
+				</li>
+
 			</ul>
 			<span id="myshow_right"><img src="img/right.png"></span>
 		</div>
